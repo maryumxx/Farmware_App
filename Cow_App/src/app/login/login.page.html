@@ -1,0 +1,58 @@
+<ion-content class="main_login_container">
+  <div id="container">
+    <ion-card class="login_form">
+      <ion-card-content>
+        <div class="logo">
+          <img src="../../assets/images/logo.png" alt="" />
+        </div>
+
+        <h1 class="card_title green_text">Login Your Account</h1>
+        <div class="message">Sign in to continue</div>
+
+        <form
+          id="login-form"
+          #form="ngForm"
+          #userLogin="ngForm"
+          (ngSubmit)="onSubmit(form)"
+        >
+          <ion-label class="form-label green_text"> Name </ion-label>
+          <ion-input
+            [(ngModel)]="dataset.username"
+            name="username"
+            required
+            placeholder="Enter Your Name"
+            id="user-input"
+            class="user-input"
+          ></ion-input>
+          <ion-label class="form-label green_text"> Password </ion-label>
+          <ion-input
+            [(ngModel)]="dataset.password"
+            name="password"
+            required
+            placeholder="Enter Password"
+            type="password"
+            id="user-password"
+            class="user-input"
+          ></ion-input>
+
+          <ion-label class="forgot_btn green_text">
+            Forgot Password?
+          </ion-label>
+
+          <ion-button
+            expand="block"
+            id="set-btn"
+            class="login-btn"
+            shape="round"
+            type="submit"
+            [disabled]="!userLogin.valid"
+          >
+            <ion-label> Log in </ion-label>
+          </ion-button>
+
+          <div class="register" routerLink="/signup">Register/SignUp</div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

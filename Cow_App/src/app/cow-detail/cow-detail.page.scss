@@ -1,0 +1,181 @@
+.main_back_btn {
+    position: fixed;
+    top: 20px;
+    left: 0;
+}
+
+.close_btn {
+    font-size: 20px;
+    color: #0f452b;
+
+    
+}
+
+
+
+.cow_image img {
+    width: 100%;
+    height: 207px;
+    object-fit: cover;
+    border-bottom: 1px solid #ededed;
+}
+
+.cow_image {
+    width: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+.change_cow_image {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    background: #a3a3a3;
+    width: 39px;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.change_cow_image ion-icon {
+    font-size: 23px;
+    color: white;
+    /* font-weight: 800; */
+}
+
+
+.titile_and_edit {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 32px;
+    align-items: center;
+}
+
+.titile_and_edit .main_title {
+    font-size: 21px;
+    color: #0f452b;
+    font-weight: 600;
+}
+
+.titile_and_edit .edit_btn {
+    font-size: 18px;
+    color: #0f452b9e;
+    font-weight: 600;
+}
+
+.main_cow_detail {
+    padding: 15px 24px;
+    border-bottom: 1px solid #b5b5b5;
+}
+
+.cow_detail_row {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* gap: 28px; */
+    margin-bottom: 20px;
+}
+
+.single_cow_detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.main_cow_image img {
+    width: 100%;
+    /* background: #0f452b38; */
+    /* padding: 8px 8px; */
+    /* border-radius: 50%; */
+}
+
+.main_cow_image {
+    background: #0f452b38;
+    width: 53px;
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    padding: 2px 6px;
+}
+
+.cow_detail p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f452b;
+}
+
+
+.single_setting_option {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 12px 0px;
+    border-bottom: 1px solid black;
+}
+
+.setting_icon ion-icon {
+    font-size: 29px;
+}
+
+.main_option_anme_and_action {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.setting_name p {
+    margin: 0;
+    /* font-weight: 500; */
+    /* color: black; */
+    font-size: 18px;
+}
+.setting_name desc {
+    margin: 0px 0px 5px 0px;
+    /* font-weight: 500; */
+    /* color: black; */
+    // font-size: 18px;
+}
+
+
+.desc {
+    color: #a9a9a9;
+}
+
+.main_setting_options {
+    padding: 20px 22px;
+    background: #cad6d0;
+    margin: 16px 18px;
+    border-radius: 24px;
+}
+
+.action ion-icon {
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_move_out_btn ion-button {
+    --background: #ff8c8c;
+    --padding-start: 0;
+    --padding-bottom: 15px;
+    --padding-end: 0;
+    --padding-top: 15px;
+}
+
+.main_move_out_btn {
+    padding: 12px 11px;
+}
+
+
+
+
+
+

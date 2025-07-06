@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Disease Prediction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+
+    <div class="form-group">
+      <ion-label position="stacked" class="green_text">Cow Select<span class="required_mark">*</span></ion-label>
+      <ion-list>
+        <ion-item lines="none" class="ion_item">
+          <ion-select aria-label="Fruit" interface="popover" placeholder="Choose a cow" name="cow_select"
+            [(ngModel)]="dataset.cow_select" required>
+            <ion-select-option *ngFor="let cow of cowList" [value]="cow.id">
+              {{ cow?.tag_number }} - {{ cow?.breed }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+
+
+    <div class="form-group">
+      <ion-label position="stacked" class="green_text">Based On Selected Symptoms<span
+          class="required_mark">*</span></ion-label>
+      <ion-list>
+        <ion-item lines="none" class="ion_item">
+          <ion-select aria-label="Fruit" interface="popover" placeholder="Choose a timing" name="cow_select"
+            [(ngModel)]="dataset.base_symptoms" required>
+            <ion-select-option *ngFor="let disease of diseases" [value]="disease">
+              {{ disease }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="form-group">
+      <ion-label position="stacked" class="green_text">Describe Symptoms (optional)<span
+          class="required_mark">*</span></ion-label>
+      <ion-list>
+        <ion-textarea style="text-align: left;" [(ngModel)]="dataset.user_define_symptoms" labelPlacement="floating" [counter]="true" maxlength="100" autoGrow="true"
+        [counterFormatter]="customCounterFormatter"></ion-textarea>
+      </ion-list>
+    </div>
+
+    
+
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar >
+    <ion-button class="next_btn" (click)="onSubmit()" slot="end">
+      Next
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

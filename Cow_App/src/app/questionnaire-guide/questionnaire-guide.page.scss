@@ -1,0 +1,66 @@
+.container {
+    padding: 16px;
+    font-family: 'Poppins';
+    text-align:left;
+    margin-left: 15px;
+    margin-right: 15px;
+
+  
+    h1 {
+      font-size: 20px;
+      font-weight:bolder;
+      margin-bottom: 8px;
+      color: #0f452b; 
+
+    }
+  
+    p {
+      font-size: 16px;
+      color: #0f452b;
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+  
+    .video-container {
+      position: relative;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+      ion-img {
+        width: 100%;
+        height: auto;
+      }
+  
+      .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+  
+  
+    .description {
+      margin-top: 16px;
+      font-size: 14px;
+      text-align: justify;
+    }
+  
+    .help-text {
+      font-size: 1rem;
+      margin-top: 20px;
+  
+      a {
+        color: #0078d7;
+        text-decoration: underline;
+      }
+    }
+  }
+  

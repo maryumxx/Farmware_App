@@ -1,0 +1,163 @@
+.container {
+    padding: 0 10px;
+}
+
+.main_modal_container {
+    margin-top: 54px;
+    border-radius: 24px 24px 0px 0px;
+    --background: none;
+}
+
+.modal_message {
+    margin-left: 14px;
+}
+
+.modal_header {
+    --background: #0f452b;
+}
+
+.main_modal {
+    text-align: center;
+}
+
+.add_icon ion-icon {
+    font-size: 54px;
+    color: #0f452b;
+}
+
+.add_device_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0f452b;
+}
+
+.label-text.sc-ion-textarea-md, .sc-ion-textarea-md-s>[slot=label] {
+    --color: #0f452b !important;
+}
+.enter_you_detail {
+    margin: 8px 0px 17px 0px;
+    color: #8594a5;
+}
+
+
+.close_btn ion-icon {
+    font-size: 25px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+ion-label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a4a4a;
+}
+
+ion-input {
+    // background: #007aff0f;
+    // padding: 0px 10px !important;
+    // border-radius: 8px;
+    // --placeholder-color: #2c4372;
+    border-bottom: 1px solid #0f452b;
+
+}
+
+// .modal_title {
+//   color: #ffffff;
+//   /* padding: 8px 9px 0px 0px; */
+//   position: absolute;
+//   top: 18px;
+//   left: 40%;
+//   /* FONT-WEIGHT: 500; */
+//   font-size: 19px;
+// }
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container ion-button {
+    --background: #0f452b;
+    --border-radius: 8px !important;
+}
+
+.form-group ion-label {
+    display: block;
+    position: relative;
+    z-index: 11;
+    color: #0f452b;
+    font-size: 19px;
+}
+
+.ion_item {
+    --padding-start: 0;
+    border-bottom: 1px solid #0f452b;
+}
+
+.add_image_btn {
+    background: #0f452b;
+    color: white;
+    width: 112px;
+    padding: 7px 17px;
+    margin: 13px 0px;
+    border-radius: 6px;
+}
+
+.main_cancel_and_add_btn {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    background: #f0f0f0;
+    width: 100%;
+    z-index: 111;
+    left: 0;
+    padding: 16px 9px;
+}
+
+.button-style {
+    --background: none;
+    --box-shadow: none;
+}
+
+.cancel_btn {
+    width: 100%;
+    text-align: center;
+    color: #ec0909;
+    font-size: 17px;
+    border-right: 1px solid #0f452b;
+}
+
+.done_btn {
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    color: #000000;
+}
+
+.required_mark {
+    color: #ff0000;
+    font-size: 19px;
+}
+
+.main_form {
+    margin-bottom: 64px;
+}
+
+.form-group ion-list {
+    background: none;
+}
+
+.form-group ion-list ion-item {
+    --background: none;
+}
+
+.dark_btns {
+    background: #222222;
+}
+
+.next_btn{
+    --background: #0f452b;
+    margin-right: 15px;
+  }

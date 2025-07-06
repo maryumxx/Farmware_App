@@ -1,0 +1,61 @@
+<ion-content class="main_login_container">
+  <div id="container">
+    <ion-card class="login_form">
+      <ion-card-content>
+        <div class="logo">
+          <img src="../../assets/images/logo.png" alt="" />
+        </div>
+
+        <h1 class="card_title green_text">Create a New Account</h1>
+        <div class="message">
+          Already Registered? <span routerLink="/login">Login here</span>
+        </div>
+
+        <form
+          #form="ngForm"
+          #fullForm="ngForm"
+          (ngSubmit)="onSubmitFullForm(form)"
+        >
+          <ion-label class="form-label green_text"> Farmer's Name </ion-label>
+          <ion-input
+            [(ngModel)]="dataset.username"
+            name="name"
+            placeholder="Enter Farmer's Name"
+            required
+            id="user-input"
+            class="user-input"
+          ></ion-input>
+          <ion-label class="form-label green_text"> Email </ion-label>
+          <ion-input
+            [(ngModel)]="dataset.email"
+            name="email"
+            placeholder="Enter Email"
+            required
+            id="user-input"
+            class="user-input"
+          ></ion-input>
+          <ion-label class="form-label green_text"> Password </ion-label>
+          <ion-input
+            [(ngModel)]="dataset.password"
+            name="password"
+            placeholder="Enter Password"
+            required
+            type="password"
+            id="user-password"
+            class="user-input"
+          ></ion-input>
+          <ion-button
+            type="submit"
+            [disabled]="!fullForm.valid"
+            expand="block"
+            id="set-btn"
+            class="login-btn"
+            shape="round"
+          >
+            <ion-label> Sign Up </ion-label>
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

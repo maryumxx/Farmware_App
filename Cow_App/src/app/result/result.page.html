@@ -1,0 +1,168 @@
+<ion-header>
+  <ion-toolbar class="modal_header">
+
+    <ion-buttons>
+      <ion-button style="color: white;" class="close_btn" (click)="BackBtn()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label class="modal_title" slot="end">
+      Medical Records
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="status_row">
+    <div class="single_status">
+      <div class="status_bullet green_bullet"></div>
+      Healthy
+    </div>
+    <div class="single_status">
+      <div class="status_bullet red_bullet"></div>
+      At Risk
+    </div>
+    <div class="single_status">
+      <div class="status_bullet blue_bullet"></div>
+      Under Treatment
+    </div>
+  </div>
+
+  <div class="profile_information">
+    <div class="single_pro_infor currentStatus">
+      <div class="left-side">
+        <div class="status_icon">
+          <img src="../../assets/images/status.png" alt="">
+        </div>
+        <div class="main_pro_infor">
+          <div class="title green_text">
+            Current Status <div
+              class="status_bullet {{cowStatus?.current_status == 'healthy' ? 'green_bullet' : cowStatus?.current_status == 'risk' ? 'red_bullet' : 'blue_bullet'}}">
+            </div>
+          </div>
+        </div>
+      </div>
+      <ion-label class="edit_Status" id="open-modal">Edit Status</ion-label>
+    </div>
+    <div class="single_pro_infor">
+      <div class="status_icon">
+        <img src="../../assets/images/69604-removebg-preview.png" alt="">
+      </div>
+      <div class="main_pro_infor">
+        <div class="title green_text">
+          Current Date
+        </div>
+        <div>
+          {{vaccineEvent?.date}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-list>
+
+    <div class="predict-data">
+      <p>Disease Prediction</p>
+      <ion-chip color="danger">
+        <h2>{{vaccineEvent?.disease}}</h2>
+      </ion-chip>
+    </div>
+
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> Treatment Medication </ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label>{{vaccineEvent?.treatment_medication}}</ion-label>
+      </ion-item>
+
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> Selected Symptoms </ion-label>
+      </ion-item-divider>
+
+      <ion-item style="overflow: scroll;">
+        <ion-label *ngFor="let name of symptomNames"><ion-chip color="success" style="white-space: nowrap;">{{ name
+            }}</ion-chip></ion-label>
+      </ion-item>
+    </ion-item-group>
+
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> Symptoms Time </ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label>{{vaccineEvent?.symptoms_base_on_time}}</ion-label>
+      </ion-item>
+    </ion-item-group>
+
+
+    <ion-item-group *ngIf="vaccineEvent?.user_summarized_symptoms.length > 0">
+      <ion-item-divider>
+        <ion-label> User Describe Symptoms </ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label>{{vaccineEvent?.user_summarized_symptoms}}</ion-label>
+      </ion-item>
+    </ion-item-group>
+
+
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> Definition </ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <markdown [data]="markdownText"></markdown>
+      </ion-item>
+
+    </ion-item-group>
+  </ion-list>
+</ion-content>
+
+
+<ion-modal #modal trigger="open-modal">
+  <ng-template>
+    <ion-content class="main_modal_content">
+      <ion-toolbar class="main_header_of_modal">
+        <ion-title class="main_modal_title green_text">Update Status</ion-title>
+        <ion-buttons slot="end">
+          <ion-button color="dark" class="close_icon" (click)="modal.dismiss()"><ion-icon
+              name="close-outline"></ion-icon></ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <form id="login-form" #form="ngForm" #statusForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="main_add_form">
+
+          <div class="form-group">
+            <ion-label position="stacked" class="green_text">Status <span class="required_mark">*</span></ion-label>
+            <ion-list>
+              <ion-item lines="none" class="ion_item">
+                <ion-select aria-label="Status" interface="popover" placeholder="Choose a status"
+                  [(ngModel)]="dataset.current_status" name="status" required>
+                  <ion-select-option value="healthy">Healthy</ion-select-option>
+                  <ion-select-option value="risk">Risk</ion-select-option>
+                  <ion-select-option value="under treatment">Under Treatment</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </div>
+
+
+          <div class="save_btn" (click)="modal.dismiss()">
+            <ion-button type="submit" [disabled]="!statusForm.valid">Save</ion-button>
+          </div>
+        </div>
+      </form>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>

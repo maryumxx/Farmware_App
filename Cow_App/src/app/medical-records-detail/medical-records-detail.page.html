@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar class="modal_header">
+
+    <ion-buttons>
+      <ion-button style="color: white;" class="close_btn" (click)="BackBtn()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label class="modal_title" slot="end">
+      Medical Records
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="profile_information">
+    <div class="single_pro_infor">
+      <div class="status_icon">
+        <img src="../../assets/images/69604-removebg-preview.png" alt="">
+      </div>
+      <div class="main_pro_infor">
+        <div class="title green_text">
+          Checkup Date
+        </div>
+        <div>
+          {{vaccineEvent?.date || 'N/A'}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-list>
+
+    <div class="predict-data">
+      <p>Disease Prediction</p>
+      <ion-chip color="danger">
+        <h2>{{vaccineEvent?.disease || 'N/A'}}</h2>
+      </ion-chip>
+    </div>
+    
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> Treatment Medication </ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label>{{vaccineEvent?.treatment_medication || 'N/A'}}</ion-label>
+      </ion-item>
+
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> Selected Symptoms </ion-label>
+      </ion-item-divider>
+
+      <ion-item style="overflow: scroll;">
+        <ion-label *ngFor="let name of symptomNames"><ion-chip color="success" style="white-space: nowrap;">{{ name  || 'N/A'}}</ion-chip></ion-label>
+      </ion-item>
+    </ion-item-group>
+
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> Symptoms Time </ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label>{{vaccineEvent?.symptoms_base_on_time || 'N/A'}}</ion-label>
+      </ion-item>
+    </ion-item-group>
+
+    <ion-item-group *ngIf="vaccineEvent?.user_summarized_symptoms.length > 0">
+      <ion-item-divider>
+        <ion-label> User Describe Symptoms </ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label>{{vaccineEvent?.user_summarized_symptoms || 'N/A'}}</ion-label>
+      </ion-item>
+    </ion-item-group>
+   
+
+
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> Definition </ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <markdown [data]="markdownText"></markdown>
+      </ion-item>
+
+    </ion-item-group>
+  </ion-list>
+</ion-content>

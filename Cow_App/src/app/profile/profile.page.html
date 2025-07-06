@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar class="modal_header">
+    
+    <ion-buttons>
+      <ion-button style="color: white;" class="close_btn" (click)="BackBtn()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label class="modal_title" slot="end">
+      Your Profile
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_pofile">
+    <div class="profile_image">
+      <img class="main_profile_image" id="profile_image" src="../../assets/images/user.png" alt="">
+    </div>
+    <div class="name">
+      {{ userDetail?.Full_Name }}
+    </div>
+    <div class="email">
+      {{ userDetail?.Email }}
+    </div>
+  </div>
+
+  <div class="profile_information">
+    <div class="single_pro_infor">
+      <div class="pro_icon">
+        <img src="../../assets/images/image-removebg-preview.png" alt="">
+      </div>
+      <div class="main_pro_infor">
+        <div class="title green_text">
+          Joined
+        </div>
+        <div class="number_of_counts green_text">
+          {{ userDetail?.created_date.slice(0, 10) }}
+        </div>
+      </div>
+    </div>
+    <div class="single_pro_infor">
+      <div class="pro_icon">
+        <img src="../../assets/images/black_cow-removebg-preview.png" alt="">
+      </div>
+      <div class="main_pro_infor">
+        <div class="title green_text">
+          Total Animals
+        </div>
+        <div class="number_of_counts green_text">
+          {{totalCow}} Animals
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</ion-content>

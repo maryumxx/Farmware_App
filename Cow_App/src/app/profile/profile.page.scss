@@ -1,0 +1,117 @@
+.main_modal_container{
+    margin-top: 54px;
+      border-radius: 24px 24px 0px 0px;
+      --background: none;
+  }
+
+  .modal_message  {
+    margin-left: 14px;
+  }
+  
+  .modal_header{
+    --background: #0f452b;
+  }
+  
+  .main_modal {
+    text-align: center;
+  }
+  
+  .add_icon ion-icon {
+    font-size: 54px;
+    color: #0f452b;
+  }
+  
+  .add_device_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0f452b;
+  }
+  
+  .enter_you_detail {
+    margin: 8px 0px 17px 0px;
+    color: #8594a5;
+  }
+  
+
+  ion-label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a4a4a;
+  }
+  
+  ion-input {
+    // background: #007aff0f;
+    // padding: 0px 10px !important;
+    // border-radius: 8px;
+    // --placeholder-color: #2c4372;
+    border-bottom: 1px solid #0f452b;
+  
+  }
+  // .modal_title {
+  //   color: #ffffff;
+  //   /* padding: 8px 9px 0px 0px; */
+  //   position: absolute;
+  //   top: 18px;
+  //   left: 37%;
+  //   /* FONT-WEIGHT: 500; */
+  //   font-size: 19px;
+  // }
+  
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .button-container ion-button {
+    --background: #0f452b;
+    --border-radius: 8px !important;
+  }
+
+  .form-group ion-label {
+    display: block;
+    position: relative;
+    z-index: 11;
+    color: #0f452b;
+    font-size: 19px;
+}
+
+
+.profile_image img {
+    width: 101px;
+}
+
+.main_pofile {
+    text-align: center;
+    padding: 27px 0px;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.name {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.single_pro_infor {
+    display: flex;
+    align-items: center;
+    margin: 13px 0px;
+    gap: 18px;
+}
+
+.profile_information {
+    padding: 20px 47px;
+}
+
+.pro_icon img {
+    width: 54px;
+}
+
+.main_pro_infor .title {
+    color: #0f452b;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.main_pro_infor .number_of_counts {
+    color: #0f452b;
+}

@@ -1,0 +1,37 @@
+
+
+
+{% extends 'admin/base_site.html' %}
+
+{% block extrahead %}
+  {% if request.user.apparence_set.first.color_theme == "Dark" %}
+    <link href="/static/admin/css/dark.css" type="text/css" rel="stylesheet">
+  {% elif request.user.apparence_set.first.color_theme == "System Color" %}
+    <link href="/static/admin/css/dark.css" type="text/css" media="(prefers-color-scheme:dark)" rel="stylesheet">
+  {% endif %}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link href="/static/admin/css/vendor/select2/select2.css" type="text/css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+  <script src="/static/admin/js/vendor/select2/select2.full.js"></script>
+  {% comment %} <script src="https://cdn.tiny.cloud/1/wbjjx25h2x7u6ajwsnknzp0w0i8edo123lj8acvxkokvc5z8/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> {% endcomment %}
+  <script src="/static/app/js/common.js"></script>
+  
+ 
+{% endblock %}
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+
+{% include "admin/color_theme_toggle.html" %}
+
+
+{% block userlinks %}
+{{ block.super }}
+
+<span> : Theme ({{request.user.apparence_set.first.color_theme}})</span>
+
+
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

@@ -1,0 +1,53 @@
+<div class="main_back_btn">
+
+  <ion-buttons>
+    <ion-button class="close_btn" (click)="BackBtn()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</div>
+
+<ion-content>
+  <ion-grid class="main_content">
+    <ion-row class="first_row">
+      <ion-col size="12">
+        <h2>Choose the Symptoms You See in Your Cow</h2>
+        <p>This will be adapted by the questionnaire</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+
+    <ion-list style="background: none;">
+      <div class="symptom-container">
+        <div *ngFor="let disease of results; trackBy: trackDisease" [class.selected]="selectedDiseases.has(disease)"
+          class="symptom-button" (click)="toggleDiseaseSelection(disease)">
+          <label for="{{ disease }}">{{ disease | underscoreToTitle }}</label>
+          <ion-checkbox [checked]="selectedDiseases.has(disease)" style="display: none;"
+            id="{{ disease }}"></ion-checkbox>
+        </div>
+      </div>
+    </ion-list>
+
+
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+
+    <!-- If urlDataExist is true -->
+    <ion-button *ngIf="urlDataExist" class="next_btn" (click)="onSubmitData()" slot="end">
+      <div class="button_next">Next</div>
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+
+    <!-- If urlDataExist is false -->
+    <ion-button *ngIf="!urlDataExist" class="next_btn" [routerLink]="['/questionnaire2', id]" slot="end">
+      <div class="button_next">Next</div>
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>

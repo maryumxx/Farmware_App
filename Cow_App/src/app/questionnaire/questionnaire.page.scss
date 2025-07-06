@@ -1,0 +1,89 @@
+.main_back_btn {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    z-index: 11;
+}
+
+.close_btn {
+    font-size: 20px;
+    color: #0f452b;
+
+   
+}
+
+
+.symptom-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap items to new rows if they don't fit */
+  gap: 10px; /* Space between buttons */
+  justify-content: center; /* Align buttons to the left */
+  padding: 10px; /* Optional: padding around the container */
+}
+
+.symptom-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px; /* Adjust padding for button size */
+  border-radius: 20px; /* Rounded corners */
+  font-size: 14px;
+  
+  cursor: pointer;
+  background-color: #89a095; /* Default blue background */
+  color: white; /* Default text color */
+  transition: background-color 0.3s ease;
+}
+
+.symptom-button:hover {
+  background-color: #57635d; /* Darker blue on hover */
+}
+
+.symptom-button.selected {
+  background-color: #0f452b; /* Pink background for selected buttons */
+}
+
+
+  .first_row{
+    text-align: center;
+  }
+
+  .main_content{
+    margin-top: 50px !important;
+  }
+
+  .main_content h2{
+    font-weight: 700;
+    font-size: 27px;
+  }
+ion-list{
+ display: flex;
+ flex-direction: row;
+}
+  ion-item {
+    --background: #d0dbd6;
+    border-radius: 35px;
+    margin: 13px 0px;
+    width: fit-content;
+    /* justify-content: center; */
+}
+
+.next_btn{
+    --background: #0f452b;
+    margin-right: 15px;
+}
+
+
+.questions_list_dark{
+  --background: #0f452b4d !important;
+}
+
+
+.selected {
+  color: white;
+  --background: #0f452b !important;  /* Custom background to highlight selected */
+  // border-radius: 10px;
+}
+
+
+

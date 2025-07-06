@@ -1,0 +1,80 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="single_options">Application Training</div>
+    <div class="single_options" routerLink="/questionnaire-guide">Questionnaires Guide</div>
+    <div class="single_options" routerLink="/quick-report-generate">Disease Prediction</div>
+    <div class="single_options" routerLink="/settings">Settings</div>
+    <div class="single_options" routerLink="/about">About Us</div>
+    <div class="single_options">Help</div>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header class="my_main_header_tag">
+    <ion-toolbar class="header_toolbar">
+      <div class="main_header">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <div class="user_icon" routerLink="/profile">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    
+    <div class="main_hero_section">
+      <div class="main_title">Hello {{ userDetail?.Full_Name }}!</div>
+      <div class="cow_qty">
+        <img src="../../assets/images/cow-removebg-preview.png" alt="" />
+        {{cowList.length}} Animals
+      </div>
+      <div class="main_search_bar">
+        <div class="search_bar_input">
+          <!-- <ion-input type="text" id="search" placeholder="Search"></ion-input> -->
+          <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+        </div>
+        <div class="search_bar_icon">
+          <ion-icon name="search-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="main_cow_list">
+      <div
+        class="single_cow_list"
+        *ngFor="let cow of cowList; let i = index"
+        [routerLink]="['/cow-detail', cow.id]"
+      >
+        <div class="left_cow_sec">
+          <div class="number_of_cow">{{i+1}}</div>
+          <div class="main_cow_name_and_gender">
+        <div class="cow_name">{{cow.tag_number}}</div>
+        <div class="gender">{{cow.gender}}  <div class="status_bullet {{cow?.current_status == 'healthy' ? 'green_bullet' : cow?.current_status == 'risk' ? 'red_bullet' : 'blue_bullet'}}">
+        </div></div>
+          </div>
+        </div>
+        <div class="right_cow_section">
+          <div class="right_arrow">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="cowList.length === 0" class="no_data_found">
+        No cows found.
+      </div>
+    </div>
+    <div class="add_cow" routerLink="/add-cow">
+      <ion-icon name="add-outline"></ion-icon>
+    </div>
+  </ion-content>
+</div>

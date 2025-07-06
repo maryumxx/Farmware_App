@@ -1,0 +1,153 @@
+.single_options {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  /* margin: 13px 0px; */
+  font-size: 16px;
+ margin-left: 20px;
+  padding: 13px 0px;
+  
+}
+
+
+.main_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px 0px 0px;
+}
+
+.user_icon {
+  font-size: 25px;
+}
+
+.my_main_header_tag{
+  box-shadow: none;
+}
+
+.main_hero_section {
+  background: #0f452b;
+  padding: 17px 25px;
+}
+
+.main_title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.cow_qty {
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: 13px 0px;
+  gap: 10px;
+  font-size: 19px;
+}
+
+.main_search_bar {
+  display: flex;
+  align-items: center;
+}
+
+.search_bar_input {
+  width: 100%;
+}
+
+.search_bar_input ion-input {
+  border: 2px solid white;
+  border-radius: 24px;
+  padding: 0px 16px !important;
+  color: white;
+
+}
+
+.search_bar_icon {
+  color: white;
+  padding: 0px 0px 0px 10px;
+  font-size: 27px;
+}
+
+.header_toolbar {
+  --background: #0f452b;
+  color: white;
+}
+
+.single_cow_list {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #0f452b;
+  padding: 9px 5px;
+  align-items: center;
+}
+
+.left_cow_sec {
+  display: flex;
+  gap: 13px;
+}
+
+.main_cow_list {
+  padding: 10px 27px;
+  margin-bottom: 68px;
+}
+
+.number_of_cow {
+  width: 30px;
+  height: 30px;
+  background: #0f452b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.cow_name {
+  font-size: 14px;
+}
+
+
+
+.gender {
+  font-size: 12px;
+  margin: 4px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+.add_cow {
+  position: fixed;
+  bottom: 9px;
+  background: #0f452b;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 29px;
+  border-radius: 50%;
+  border: 23px;
+  right: 14px;
+}
+
+.status_bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
+
+
+.green_bullet{
+  background: #1fed2f;
+}
+.red_bullet{
+  background: #ff0b0b;
+}
+.blue_bullet{
+  background: #00c0df;
+}

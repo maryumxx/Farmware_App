@@ -1,0 +1,140 @@
+<ion-header>
+  <ion-toolbar class="modal_header">
+    
+    <ion-buttons>
+      <ion-button style="color: white;" class="close_btn" (click)="BackBtn()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label class="modal_title" slot="end">
+      Settings
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_pofile">
+    <div class="profile_image">
+      <img id="profile_image" src="../../assets/images/user.png" alt="">
+    </div>
+    <div class="name">
+      {{ userDetail?.Full_Name }}
+    </div>
+    <div class="email">
+      {{ userDetail?.Email }}
+
+    </div>
+  </div>
+
+  <div class="title_bar">
+    General Settings
+  </div>
+  <div class="main_setting_options">
+
+  <div class="single_setting_option">
+    <div class="setting_icon">
+      <ion-icon name="invert-mode-outline"></ion-icon>
+    </div>
+    <div class="main_option_anme_and_action">
+      <div class="setting_name">
+        <p>Mode</p>
+        <div class="desc">
+          Dark & Light
+        </div>
+
+      </div>
+      <div class="action">
+        <ion-toggle [(ngModel)]="themeToggle"  (ionChange)="toggleChange($event)" [checked]="themeToggle"></ion-toggle>
+      </div>
+    </div>
+  </div>
+  <div class="single_setting_option" routerLink="/change-password">
+    <div class="setting_icon">
+      <ion-icon name="key-outline"></ion-icon>
+    </div>
+    <div class="main_option_anme_and_action">
+      <div class="setting_name">
+        <p>Change Password</p>
+      </div>
+      <div class="action">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="single_setting_option">
+    <div class="setting_icon">
+      <ion-icon name="language-outline"></ion-icon>
+    </div>
+    <div class="main_option_anme_and_action">
+      <div class="setting_name">
+        <p>Language</p>
+      </div>
+      <div class="action">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div> -->
+
+</div>
+  <div class="title_bar">
+    Information
+  </div>
+  <div class="main_setting_options">
+
+  <div class="single_setting_option">
+    <div class="setting_icon">
+      <ion-icon name="tablet-portrait-outline"></ion-icon>
+    </div>
+    <div class="main_option_anme_and_action">
+      <div class="setting_name" routerLink="/about">
+        <p>About Us</p>
+      </div>
+      <div class="action">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <div class="single_setting_option">
+    <div class="setting_icon">
+      <ion-icon name="save-outline"></ion-icon>
+    </div>
+    <div class="main_option_anme_and_action">
+      <div class="setting_name">
+        <p>Terms & Conditions</p>
+      </div>
+      <div class="action">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <div class="single_setting_option">
+    <div class="setting_icon">
+      <ion-icon name="shield-checkmark-outline"></ion-icon>
+    </div>
+    <div class="main_option_anme_and_action">
+      <div class="setting_name">
+        <p>Privacy Policy</p>
+      </div>
+      <div class="action">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <div class="single_setting_option">
+    <div class="setting_icon">
+      <ion-icon name="videocam-outline"></ion-icon>
+    </div>
+    <div class="main_option_anme_and_action" routerLink="/questionnaire-guide">
+      <div class="setting_name">
+        <p>Watch Tutorial</p>
+      </div>
+      <div class="action">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+</ion-content>

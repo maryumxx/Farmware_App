@@ -1,0 +1,52 @@
+<div class="main_back_btn">
+
+  <ion-buttons>
+    <ion-button class="close_btn" (click)="BackBtn()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</div>
+
+<ion-content>
+
+
+  <ion-grid class="main_content">
+    <ion-row class="first_row">
+      <ion-col size="12">
+        <h2>Based On Selected Symptoms</h2>
+        <p>How long has the cow been limping or showing difficulty walking?</p>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-list style="background: none;">
+      <ion-radio-group [(ngModel)]="selectedDisease">
+        <ion-item *ngFor="let disease of diseases" [class.selected]="selectedDisease === disease" lines="none"
+          class="questions_list">
+          <label for="{{disease}}">{{disease}}</label>
+          <ion-radio slot="start" [value]="disease" style="display: none;" id="{{disease}}"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+
+    <ion-row class="ion-text-right" style="padding: 0px 20px;">
+      <ion-col>
+
+        <ion-textarea style="text-align: left;" label="Describe Symptoms (optional)" [(ngModel)]="user_define_symptoms" labelPlacement="floating" [counter]="true" maxlength="100" autoGrow="true" fill="solid"
+          [counterFormatter]="customCounterFormatter"></ion-textarea>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button class="next_btn" (click)="onSubmitData()" slot="end">
+      Next
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

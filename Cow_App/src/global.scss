@@ -1,0 +1,151 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --ion-font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--ion-font-family);
+}
+
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+.ios body {
+  --ion-background-color: #f2f2f6;
+  --ion-toolbar-background: var(--ion-background-color);
+  --ion-item-background: #fff;
+}
+
+/* This sets a different background and item background in light mode on md */
+.md body {
+  --ion-background-color: #f9f9f9;
+  --ion-toolbar-background: var(--ion-background-color);
+  --ion-item-background: #fff;
+}
+
+/* This is added for the flashing that happens when toggling between themes */
+ion-item {
+  --transition: none;
+}
+
+.dark_text{
+  color: white !important;
+}
+
+.main_modal_container{
+    margin-top: 54px;
+      border-radius: 24px 24px 0px 0px;
+      --background: none;
+  }
+
+  .modal_message  {
+    margin-left: 14px;
+  }
+  
+  .modal_header{
+    --background: #0f452b;
+  }
+  
+  .main_modal {
+    text-align: center;
+  }
+  
+  .add_icon ion-icon {
+    font-size: 54px;
+    color: #000000;
+  }
+  
+  .add_device_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0f452b;
+  }
+  
+  .enter_you_detail {
+    margin: 8px 0px 17px 0px;
+    color: #8594a5;
+  }
+  
+
+  // ion-label {
+  //   // margin-bottom: 8px;
+  //   font-weight: 500;
+  //   color: #4a4a4a;
+  // }
+  
+  ion-input {
+    // background: #007aff0f;
+    // padding: 0px 10px !important;
+    // border-radius: 8px;
+    // --placeholder-color: #2c4372;
+    border-bottom: 1px solid #0f452b;
+  
+  }
+  .modal_title {
+    color: #ffffff !important;
+    position: fixed;
+    top: 28px;
+    left: 50%;
+    font-size: 19px;
+    transform: translate(-50%, -50%);
+}
+
+
+.icon_dark_mode img{
+  filter: invert(1);
+}
+.cow_icon_dark_mode img{
+  filter: invert(1);
+}
+.cow_icon_dark_mode{
+  background: rgb(15 69 43) !important;
+
+}
+
+.gray_text{
+  color: #b9b9b9 !important;
+}
+
+.main_setting_options_dark{
+  background: #0f452b !important;
+}
+
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+ 
+
+//  @import "@ionic/angular/css/palettes/dark.always.css"; 
+//  @import "@ionic/angular/css/palettes/dark.class.css"; 
+//  @import "@ionic/angular/css/palettes/dark.system.css";

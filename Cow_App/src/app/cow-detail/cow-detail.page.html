@@ -1,0 +1,110 @@
+<ion-content>
+  <div class="main_back_btn">
+    <ion-buttons>
+      <ion-button class="close_btn" routerLink="/home">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <div class="cow_image image_preview">
+    <!-- Preview Image -->
+    <img
+      id="image_preview"
+      id="cow_image"
+      [src]="domain + cow?.image || 'assets/images/no-preview.jpeg'"
+      alt="Preview"
+    />
+  </div>
+
+  <div class="titile_and_edit">
+    <div class="main_title green_text">Basic Info</div>
+    <div class="edit_btn green_text" [routerLink]="['/update-cow', id]">Edit</div>
+  </div>
+
+  <div class="main_cow_detail">
+    <div class="cow_detail_row">
+      <div class="single_cow_detail">
+        <div class="main_cow_image">
+          <img src="../../assets/images/cow_face.png" alt="" />
+        </div>
+        <div class="cow_detail">
+          <p class="cow_title">Cow ID</p>
+          <div class="detail cow_title" id="cow_tag_number">{{ cow?.tag_number }}</div>
+        </div>
+      </div>
+      <div class="single_cow_detail">
+        <div class="main_cow_image">
+          <img
+            src="../../assets/images/download-removebg-preview (1).png"
+            alt=""
+          />
+        </div>
+        <div class="cow_detail">
+          <p class="cow_title">Gender</p>
+          <div class="detail cow_title" id="cow_gender">{{ cow?.gender }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="cow_detail_row">
+      <div class="single_cow_detail">
+        <div class="main_cow_image">
+          <img src="../../assets/images/breed.png" alt="" />
+        </div>
+        <div class="cow_detail">
+          <p class="cow_title">Breed</p>
+          <div class="detail cow_title" id="cow_breed">{{ cow?.breed }}</div>
+        </div>
+      </div>
+      <div class="single_cow_detail">
+        <div class="main_cow_image">
+          <img src="../../assets/images/download-removebg-preview.png" alt="" />
+        </div>
+        <div class="cow_detail">
+          <p class="cow_title">Birthday</p>
+          <div class="detail cow_title"  id="cow_date_of_birth">{{ cow?.date_of_birth }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main_setting_options questionnaries_and_medical_rec">
+    <div class="single_setting_option" [routerLink]="['/questionnaire', id]">
+      <div class="setting_icon">
+        <ion-icon name="document-outline"></ion-icon>
+      </div>
+      <div class="main_option_anme_and_action">
+        <div class="setting_name">
+          <p>Questionnaire</p>
+        </div>
+        <div class="action">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="single_setting_option" [routerLink]="['/medical-records', id]">
+      <div class="setting_icon">
+        <ion-icon name="medical-outline"></ion-icon>
+      </div>
+      <div class="main_option_anme_and_action">
+        <div class="setting_name">
+          <p>Medical Records</p>
+        </div>
+        <div class="action">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main_move_out_btn">
+    <ion-button
+      expand="block"
+      class="login-btn"
+      shape="round"
+      (click)="BackBtn()"
+    >
+      Move Out
+    </ion-button>
+  </div>
+</ion-content>

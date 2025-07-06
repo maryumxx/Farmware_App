@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar class="modal_header">
+    <ion-buttons>
+      <ion-button style="color: white" class="close_btn" (click)="BackBtn()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label class="modal_title" slot="end"> Medical Records </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="status_row">
+    <div class="single_status">
+      <div class="status_bullet green_bullet"></div>
+      Healthy
+    </div>
+    <div class="single_status">
+      <div class="status_bullet red_bullet"></div>
+      At Risk
+    </div>
+    <div class="single_status">
+      <div class="status_bullet blue_bullet"></div>
+      Under Treatment
+    </div>
+  </div>
+
+  <div class="profile_information">
+    <div class="single_pro_infor currentStatus">
+      <div class="left-side">
+        <div class="status_icon">
+          <img src="../../assets/images/status.png" alt="">
+        </div>
+        <div class="main_pro_infor">
+          <div class="title green_text">
+            Current Status <div
+              class="status_bullet {{cowStatus?.current_status == 'healthy' ? 'green_bullet' : cowStatus?.current_status == 'risk' ? 'red_bullet' : 'blue_bullet'}}">
+            </div>
+          </div>
+        </div>
+      </div>
+      <ion-label class="edit_Status" id="open-modal">Edit</ion-label>
+    </div>
+    <div class="single_pro_infor">
+      <div class="status_icon">
+        <img src="../../assets/images/69604-removebg-preview.png" alt="" />
+      </div>
+      <div class="main_pro_infor">
+        <div class="title green_text">Last Checkup Date</div>
+        <div class="number_of_counts green_text">{{checkupDate}}</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="titile_and_edit">
+    <div class="main_title green_text">Basic Info</div>
+  </div>
+
+  <div class="main_cow_detail">
+    <div class="cow_detail_row">
+      <div class="single_cow_detail">
+        <div class="main_cow_image">
+          <img src="../../assets/images/cow_face.png" alt="" />
+        </div>
+        <div class="cow_detail">
+          <p class="cow_title">Cow ID</p>
+          <div class="detail cow_title" id="cow_tag_number">{{ cow?.tag_number }}</div>
+        </div>
+      </div>
+      <div class="single_cow_detail">
+        <div class="main_cow_image">
+          <img src="../../assets/images/breed.png" alt="" />
+        </div>
+        <div class="cow_detail">
+          <p class="cow_title">Breed</p>
+          <div class="detail cow_title" id="cow_breed">{{ cow?.breed }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main_key_events">
+    <div class="key_events_title">
+      <ion-icon name="list-outline"></ion-icon>
+      Key Events
+    </div>
+    <div class="key_event_detail">
+      <ul>
+        <div *ngIf="eventList && eventList.length > 0; else noEvents">
+          <div class="vaccination_row" *ngFor="let event of eventList;"
+            routerLink="/medical-records-detail/{{event?.id}}">
+            <div class="single_li">
+              <li class="disease-name"><ion-chip color="danger">{{event?.disease}}</ion-chip></li>
+              <ion-label>{{event?.date}}</ion-label>
+            </div>
+            <div class="short_detail">{{event.treatment_medication}}</div>
+          </div>
+        </div>
+
+        <ng-template #noEvents>
+          <p class="empty_field">No treatments or vaccinations added</p>
+        </ng-template>
+
+      </ul>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-modal #modal trigger="open-modal">
+  <ng-template>
+    <ion-content class="main_modal_content">
+      <ion-toolbar class="main_header_of_modal">
+        <ion-title class="main_modal_title green_text">Update Status</ion-title>
+        <ion-buttons slot="end">
+          <ion-button color="dark" class="close_icon" (click)="modal.dismiss()"><ion-icon
+              name="close-outline"></ion-icon></ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <form id="login-form" #form="ngForm" #statusForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="main_add_form">
+
+          <div class="form-group">
+            <ion-label position="stacked" class="green_text">Status <span class="required_mark">*</span></ion-label>
+            <ion-list>
+              <ion-item lines="none" class="ion_item">
+                <ion-select aria-label="Status" interface="popover" placeholder="Choose a status"
+                  [(ngModel)]="dataset.current_status" name="status" required>
+                  <ion-select-option value="healthy">Healthy</ion-select-option>
+                  <ion-select-option value="risk">Risk</ion-select-option>
+                  <ion-select-option value="under treatment">Under Treatment</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </div>
+
+
+          <div class="save_btn" (click)="modal.dismiss()">
+            <ion-button type="submit" [disabled]="!statusForm.valid">Save</ion-button>
+          </div>
+        </div>
+      </form>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>

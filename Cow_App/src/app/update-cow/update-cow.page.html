@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar class="modal_header">
+    <ion-buttons>
+      <ion-button style="color: white" class="close_btn" (click)="BackBtn()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label class="modal_title" slot="end"> Update Cow </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="main_form">
+    <form #cowFormUpdate="ngForm" (ngSubmit)="onSubmit()" id="form">
+      <div class="form-group">
+        <ion-label position="stacked" class="green_text">Gender </ion-label>
+        <ion-list>
+          <ion-item lines="none" class="ion_item">
+            <ion-select aria-label="Fruit" interface="popover" placeholder="Choose a gender"
+              [(ngModel)]="dataset.gender" name="gender" required>
+              <ion-select-option value="male">Male</ion-select-option>
+              <ion-select-option value="female">Female</ion-select-option>
+              <ion-select-option value="other">Other</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="form-group">
+        <ion-label position="stacked" class="green_text">Tag Number </ion-label>
+        <ion-input type="number" [(ngModel)]="dataset.tag_number" name="tag_number" required
+          placeholder="e.g 1, 2, 3..."></ion-input>
+      </div>
+      <div class="form-group">
+        <ion-label position="stacked" class="green_text">Date of Birth </ion-label>
+        <ion-input [(ngModel)]="dataset.date_of_birth" name="date_of_birth" required type="date"></ion-input>
+      </div>
+      <div class="form-group">
+        <ion-label position="stacked" class="green_text">Image</ion-label>
+        <input type="file" (change)="cowImage($event)" style="display: none" id="file" />
+        <label for="file">
+          <div class="add_image_btn">Add Image</div>
+        </label>
+      </div>
+      <div class="form-group">
+        <ion-label position="stacked" class="green_text">Breed </ion-label>
+        <ion-input [(ngModel)]="dataset.breed" name="breed" required placeholder="Enter the breed"></ion-input>
+      </div>
+      <div class="form-group">
+        <ion-label position="stacked" class="green_text">Age </ion-label>
+        <ion-input type="number" [(ngModel)]="dataset.age" name="age" required placeholder="Enter the age"></ion-input>
+      </div>
+
+      <div class="form-group">
+        <ion-label position="stacked" class="green_text"
+          >Cow Status </ion-label
+        >
+        <ion-list>
+          <ion-item lines="none" class="ion_item">
+            <ion-select
+              aria-label="Status"
+              interface="popover"
+              placeholder="Choose a status"
+              [(ngModel)]="dataset.current_status"
+              name="status"
+              required
+            >
+              <ion-select-option value="healthy">Healthy</ion-select-option>
+              <ion-select-option value="risk">Risk</ion-select-option>
+              <ion-select-option value="under treatment">Under Treatment</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div class="main_cancel_and_add_btn">
+        <ion-button form="form" class="button-style cancel_btn" (click)="Back()">
+          Cancel
+        </ion-button>
+
+        <ion-button type="submit" id="apiHit" form="form" class="button-style done_btn"
+          [disabled]="!cowFormUpdate.valid">
+          Update
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>
